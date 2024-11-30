@@ -1,5 +1,6 @@
 import { Phone, Car, Wrench, Menu, X } from "lucide-react";
 import { useState } from "react";
+import Map from "../components/Map";
 
 const Contact = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,11 +67,8 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="bg-gray-200 h-[400px] rounded-lg">
-            {/* Map placeholder */}
-            <div className="w-full h-full flex items-center justify-center text-gray-500">
-              Map Integration
-            </div>
+          <div className="bg-gray-200 h-[400px] rounded-lg overflow-hidden">
+            <Map />
           </div>
         </div>
       </div>
