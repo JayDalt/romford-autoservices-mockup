@@ -6,11 +6,16 @@ const Index = () => {
     { icon: <CarFront className="w-8 h-8" />, title: "Diagnostics", description: "Advanced computer diagnostics" },
     { icon: <Wrench className="w-8 h-8" />, title: "Clutches", description: "Complete clutch replacement" },
     { icon: <Fuel className="w-8 h-8" />, title: "Suspension", description: "Full suspension system maintenance" },
+    { icon: <Car className="w-8 h-8" />, title: "Brakes", description: "Brake system repairs and maintenance" },
+    { icon: <Wrench className="w-8 h-8" />, title: "Welding", description: "Professional welding services" },
+    { icon: <CarFront className="w-8 h-8" />, title: "Tyres", description: "Tyre fitting and balancing" },
+    { icon: <Fuel className="w-8 h-8" />, title: "Exhausts", description: "Exhaust system repairs and replacement" },
+    { icon: <Wrench className="w-8 h-8" />, title: "Servicing", description: "Comprehensive vehicle servicing" },
   ];
 
+  // Navigation
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
       <nav className="bg-garage-blue text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
@@ -40,7 +45,7 @@ const Index = () => {
       <section id="services" className="py-20 bg-gray-50">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-garage-blue">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-8 px-4">
+          <div className="grid md:grid-cols-4 gap-8 px-4">
             {services.map((service, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                 <div className="text-garage-blue mb-4">{service.icon}</div>

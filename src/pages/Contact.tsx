@@ -1,8 +1,23 @@
-import { Phone, Car } from "lucide-react";
+import { Phone, Car, Wrench } from "lucide-react";
 
 const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
+      <nav className="bg-garage-blue text-white p-4">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex items-center space-x-2">
+            <Wrench className="w-8 h-8 text-garage-yellow" />
+            <span className="text-2xl font-bold">Romford Auto Services</span>
+          </div>
+          <div className="hidden md:flex space-x-6">
+            <a href="/" className="hover:text-garage-yellow transition-colors">Home</a>
+            <a href="/about" className="hover:text-garage-yellow transition-colors">About</a>
+            <a href="/contact" className="hover:text-garage-yellow transition-colors">Contact</a>
+          </div>
+        </div>
+      </nav>
+
       <div className="container mx-auto px-4 py-20">
         <h1 className="text-4xl font-bold text-center mb-12 text-garage-blue">Contact Us</h1>
         
