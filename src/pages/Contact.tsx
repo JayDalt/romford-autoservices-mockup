@@ -1,20 +1,43 @@
-import { Phone, Car, Wrench } from "lucide-react";
+import { Phone, Car, Wrench, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <nav className="bg-garage-blue text-white p-4">
+      <nav className="bg-garage-blue text-white p-4 relative">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Wrench className="w-8 h-8 text-garage-yellow" />
             <span className="text-2xl font-bold">Romford Auto Services</span>
           </div>
+          
+          {/* Mobile menu button */}
+          <button 
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+
+          {/* Desktop menu */}
           <div className="hidden md:flex space-x-6">
             <a href="/" className="hover:text-garage-yellow transition-colors">Home</a>
             <a href="/about" className="hover:text-garage-yellow transition-colors">About</a>
             <a href="/contact" className="hover:text-garage-yellow transition-colors">Contact</a>
           </div>
+
+          {/* Mobile menu dropdown */}
+          {isMenuOpen && (
+            <div className="absolute top-full left-0 right-0 bg-garage-blue md:hidden">
+              <div className="flex flex-col items-center py-4 space-y-4">
+                <a href="/" className="hover:text-garage-yellow transition-colors">Home</a>
+                <a href="/about" className="hover:text-garage-yellow transition-colors">About</a>
+                <a href="/contact" className="hover:text-garage-yellow transition-colors">Contact</a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -27,11 +50,11 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <Phone className="w-6 h-6 text-garage-red" />
-                <span className="text-lg">020 1234 5678</span>
+                <span className="text-lg">01708 736555</span>
               </div>
               <div className="flex items-center space-x-4">
                 <Car className="w-6 h-6 text-garage-red" />
-                <span className="text-lg">123 Garage Street, Romford, RM1 1AA</span>
+                <span className="text-lg">55 Brentwood Rd, Hornchurch, Romford RM1 2EU</span>
               </div>
               <div className="mt-8">
                 <h3 className="text-xl font-bold mb-4 text-garage-blue">Opening Hours</h3>

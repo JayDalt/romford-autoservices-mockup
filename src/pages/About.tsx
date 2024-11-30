@@ -1,6 +1,9 @@
-import { Wrench, Clock } from "lucide-react";
+import { Wrench, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const About = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const services = [
     { title: "Clutches", description: "Complete clutch replacement and repairs" },
     { title: "Suspension", description: "Full suspension system maintenance" },
@@ -14,18 +17,38 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <nav className="bg-garage-blue text-white p-4">
+      <nav className="bg-garage-blue text-white p-4 relative">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Wrench className="w-8 h-8 text-garage-yellow" />
             <span className="text-2xl font-bold">Romford Auto Services</span>
           </div>
+          
+          {/* Mobile menu button */}
+          <button 
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+
+          {/* Desktop menu */}
           <div className="hidden md:flex space-x-6">
             <a href="/" className="hover:text-garage-yellow transition-colors">Home</a>
             <a href="/about" className="hover:text-garage-yellow transition-colors">About</a>
             <a href="/contact" className="hover:text-garage-yellow transition-colors">Contact</a>
           </div>
+
+          {/* Mobile menu dropdown */}
+          {isMenuOpen && (
+            <div className="absolute top-full left-0 right-0 bg-garage-blue md:hidden">
+              <div className="flex flex-col items-center py-4 space-y-4">
+                <a href="/" className="hover:text-garage-yellow transition-colors">Home</a>
+                <a href="/about" className="hover:text-garage-yellow transition-colors">About</a>
+                <a href="/contact" className="hover:text-garage-yellow transition-colors">Contact</a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 

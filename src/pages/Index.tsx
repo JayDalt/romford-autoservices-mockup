@@ -1,7 +1,9 @@
-import { Car, Wrench, Phone, Clock, CarFront, Fuel } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Car, Wrench, Phone, Clock, CarFront, Fuel, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const Index = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const services = [
     { icon: <CarFront className="w-8 h-8" />, title: "Diagnostics", description: "Advanced computer diagnostics" },
     { icon: <Wrench className="w-8 h-8" />, title: "Clutches", description: "Complete clutch replacement" },
@@ -13,24 +15,43 @@ const Index = () => {
     { icon: <Wrench className="w-8 h-8" />, title: "Servicing", description: "Comprehensive vehicle servicing" },
   ];
 
-  // Navigation
   return (
     <div className="min-h-screen bg-white">
-      <nav className="bg-garage-blue text-white p-4">
+      <nav className="bg-garage-blue text-white p-4 relative">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Car className="w-8 h-8 text-garage-yellow" />
             <span className="text-2xl font-bold">Romford Auto Services</span>
           </div>
+          
+          {/* Mobile menu button */}
+          <button 
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+
+          {/* Desktop menu */}
           <div className="hidden md:flex space-x-6">
             <a href="/" className="hover:text-garage-yellow transition-colors">Home</a>
             <a href="/about" className="hover:text-garage-yellow transition-colors">About</a>
             <a href="/contact" className="hover:text-garage-yellow transition-colors">Contact</a>
           </div>
+
+          {/* Mobile menu dropdown */}
+          {isMenuOpen && (
+            <div className="absolute top-full left-0 right-0 bg-garage-blue md:hidden">
+              <div className="flex flex-col items-center py-4 space-y-4">
+                <a href="/" className="hover:text-garage-yellow transition-colors">Home</a>
+                <a href="/about" className="hover:text-garage-yellow transition-colors">About</a>
+                <a href="/contact" className="hover:text-garage-yellow transition-colors">Contact</a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
-      {/* Hero Section */}
       <div className="bg-gradient-to-r from-garage-blue to-blue-900 text-white py-20">
         <div className="container mx-auto text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-6">Expert Auto Services in Romford</h1>
@@ -41,7 +62,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Services Section */}
       <section id="services" className="py-20 bg-gray-50">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-garage-blue">Our Services</h2>
@@ -57,7 +77,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
       <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-garage-blue">Why Choose Us</h2>
@@ -103,11 +122,11 @@ const Index = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <Phone className="w-6 h-6 text-garage-red" />
-                  <span>020 1234 5678</span>
+                  <span>01708 736555</span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <Car className="w-6 h-6 text-garage-red" />
-                  <span>123 Garage Street, Romford, RM1 1AA</span>
+                  <span>55 Brentwood Rd, Hornchurch, Romford RM1 2EU</span>
                 </div>
               </div>
             </div>
@@ -121,7 +140,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-garage-blue text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2024 Romford Auto Services. All rights reserved.</p>
