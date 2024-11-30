@@ -1,4 +1,4 @@
-import { Wrench, Menu, X } from "lucide-react";
+import { Wrench, Menu, X, Clock } from "lucide-react";
 import { useState } from "react";
 
 const About = () => {
