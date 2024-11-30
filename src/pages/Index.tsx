@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const services = [
-    { icon: <CarFront className="w-8 h-8" />, title: "Diagnostics", description: "Computer-aided vehicle diagnostics" },
-    { icon: <Wrench className="w-8 h-8" />, title: "Repairs", description: "Full service and repairs" },
-    { icon: <Fuel className="w-8 h-8" />, title: "MOT", description: "MOT testing and certification" },
+    { icon: <CarFront className="w-8 h-8" />, title: "Diagnostics", description: "Advanced computer diagnostics" },
+    { icon: <Wrench className="w-8 h-8" />, title: "Clutches", description: "Complete clutch replacement" },
+    { icon: <Fuel className="w-8 h-8" />, title: "Suspension", description: "Full suspension system maintenance" },
   ];
 
   return (
@@ -18,9 +18,9 @@ const Index = () => {
             <span className="text-2xl font-bold">Romford Auto Services</span>
           </div>
           <div className="hidden md:flex space-x-6">
-            <a href="#services" className="hover:text-garage-yellow transition-colors">Services</a>
-            <a href="#about" className="hover:text-garage-yellow transition-colors">About</a>
-            <a href="#contact" className="hover:text-garage-yellow transition-colors">Contact</a>
+            <a href="/" className="hover:text-garage-yellow transition-colors">Home</a>
+            <a href="/about" className="hover:text-garage-yellow transition-colors">About</a>
+            <a href="/contact" className="hover:text-garage-yellow transition-colors">Contact</a>
           </div>
         </div>
       </nav>
@@ -30,9 +30,9 @@ const Index = () => {
         <div className="container mx-auto text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-6">Expert Auto Services in Romford</h1>
           <p className="text-xl mb-8 text-gray-200">Professional car repairs and maintenance you can trust</p>
-          <Button className="bg-garage-red hover:bg-red-700 text-white px-8 py-6 text-lg">
-            Book Now
-          </Button>
+          <div className="flex space-x-4 justify-center">
+            <a href="/about" className="text-white hover:text-garage-yellow transition-colors">Learn More</a>
+          </div>
         </div>
       </div>
 
