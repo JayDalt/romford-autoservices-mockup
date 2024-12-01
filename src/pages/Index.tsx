@@ -1,4 +1,4 @@
-import { Car, Wrench, Phone, Clock, CarFront, Fuel, Menu, X, ThumbsUp} from "lucide-react";
+import { Car, Wrench, Phone, Clock, CarFront, Fuel, Menu, X } from "lucide-react";
 import { useState } from "react";
 import Map from "../components/Map";
 
@@ -8,13 +8,14 @@ const Index = () => {
   const services = [
     { icon: <CarFront className="w-8 h-8" />, title: "Diagnostics", description: "Advanced computer diagnostics" },
     { icon: <Wrench className="w-8 h-8" />, title: "Clutches", description: "Complete clutch replacement" },
-    { icon: <img src="/images/suspension.png" className="w-8 h-8" />, title: "Suspension", description: "Full suspension system maintenance" },
-    { icon: <img src="/images/disc-brake.png" className="w-8 h-8" />, title: "Brakes", description: "Brake system repairs and maintenance" },
-    { icon: <img src="/images/welder.png" className="w-8 h-8" />, title: "Welding", description: "Professional welding services" },
-    { icon: <img src="/images/rubber.png" className="w-10 h-10" />, title: "Tyres", description: "Tyre fitting and balancing" },
-    { icon: <img src="/images/filter.png" className="w-8 h-8" />, title: "Exhausts", description: "Exhaust system repairs and replacement" },
-    { icon: <ThumbsUp className="w-8 h-8" />, title: "Servicing", description: "Comprehensive vehicle servicing" },
+    { icon: <Fuel className="w-8 h-8" />, title: "Suspension", description: "Full suspension system maintenance" },
+    { icon: <Car className="w-8 h-8" />, title: "Brakes", description: "Brake system repairs and maintenance" },
+    { icon: <Wrench className="w-8 h-8" />, title: "Welding", description: "Professional welding services" },
+    { icon: <CarFront className="w-8 h-8" />, title: "Tyres", description: "Tyre fitting and balancing" },
+    { icon: <Fuel className="w-8 h-8" />, title: "Exhausts", description: "Exhaust system repairs and replacement" },
+    { icon: <Wrench className="w-8 h-8" />, title: "Servicing", description: "Comprehensive vehicle servicing" },
   ];
+
   return (
     <div className="min-h-screen bg-white">
       <nav className="bg-garage-blue text-white p-4 relative">
@@ -70,7 +71,7 @@ const Index = () => {
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                 <div className="text-garage-blue mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p> 
+                <p className="text-gray-600">{service.description}</p>
               </div>
             ))}
           </div>
