@@ -6,7 +6,7 @@ const About = () => {
   
   const services = [
     { title: "Clutches", description: "Complete clutch replacement and repairs" },
-    { title: "Suspension", description: "Full suspension system maintenance" },
+    { title: "Suspension", description: "Full suspension system maintenance"},
     { title: "Servicing", description: "Comprehensive vehicle servicing" },
     { title: "Brakes", description: "Brake system repairs and maintenance" },
     { title: "Diagnostics", description: "Advanced computer diagnostics" },
