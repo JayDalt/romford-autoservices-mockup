@@ -15,7 +15,7 @@ export default {
     extend: {
       colors: {
         garage: {
-          blue: "#0A2472",  // Changed back to original dark blue
+          blue: "#004AAD",  // Changed to a true dark blue
           yellow: "#FFD700",
           red: "#DC2626",
         },
